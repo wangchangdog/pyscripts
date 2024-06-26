@@ -42,7 +42,7 @@ def validate_sitemap_content(content):
     for url in urls:
         url_response = requests.get(url)
         if url_response.status_code == 200:
-            print(Fore.GREEN + f"URL is valid: " + Fore.RESET + f"{url}")
+            print(Fore.GREEN + f"URL is valid: " + Fore.RESET + f" - Status code: " + Fore.GREEN + f"{url_response.status_code}" + Fore.RESET + f" - URL: " + Fore.RESET + f"{url}")
         else:
             print(Fore.RED + f"URL is invalid: " + Fore.RESET + f"{url} - Status code: " + Fore.RED + f"{url_response.status_code}" + Fore.RESET)
     return True
